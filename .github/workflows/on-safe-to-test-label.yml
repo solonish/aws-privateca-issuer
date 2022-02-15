@@ -81,7 +81,12 @@ jobs:
           GOVERSION=go1.17.7
           wget https://go.dev/dl/$GOVERSION.linux-amd64.tar.gz
           sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $GOVERSION.linux-amd64.tar.gz
-          PATH="$PATH:/usr/local/go/bin"
+          PATH=$PATH:/usr/local/go/bin
+          which go
+          echo PATH=$PATH >> $GITHUB_ENV
+          go version
+          sudo ls /usr/local/go
+          sudo ls /usr/local/go/bin
           GOPATH="/home/ec2-user/go"
           GOCACHE="/home/ec2-user/.cache/go-build"
           GOMODCACHE="/home/ec2-user/.cache/go-mod"
