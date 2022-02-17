@@ -20,7 +20,7 @@ jobs:
       - name: Setup AWS Credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::892721419421:role/GithubActionsTestingRole-dev-solonish-us-east-1
+          role-to-assume: arn:aws:iam::550450344492:role/GithubActionsTestingRole-dev-solonish-us-east-1
           aws-region: us-east-1
       - name: Configure EC2 Runner Parameters
         run: |
@@ -121,7 +121,7 @@ jobs:
       - name: Terminate Kind cluster and setup for next test
         if: ${{ always() }}
         run: |
-          export OIDC_IAM_ROLE=arn:aws:iam::892721419421:role/IrsaTestingRole-dev-solonish-us-east-1
+          export OIDC_IAM_ROLE=arn:aws:iam::550450344492:role/IrsaTestingRole-dev-solonish-us-east-1
           export OIDC_S3_BUCKET_NAME=aws-privateca-issuer-irsa-dev-solonish-us-east-1
           echo OIDC_IAM_ROLE=$OIDC_IAM_ROLE >> $GITHUB_ENV
           echo OIDC_S3_BUCKET_NAME=$OIDC_S3_BUCKET_NAME >> $GITHUB_ENV
@@ -161,7 +161,7 @@ jobs:
       - name: Setup AWS Credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
-          role-to-assume: arn:aws:iam::892721419421:role/GithubActionsTestingRole-dev-solonish-us-east-1
+          role-to-assume: arn:aws:iam::550450344492:role/GithubActionsTestingRole-dev-solonish-us-east-1
           aws-region: us-east-1
       - name: Setup AWS Region
         run: |
