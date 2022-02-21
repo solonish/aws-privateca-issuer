@@ -13,3 +13,4 @@ jobs:
     steps:
     - run: |
         echo "GitHub event: ${{ toJson(github) }}"
+        echo ${{ github.event_name }}=="workflow_dispatch"
