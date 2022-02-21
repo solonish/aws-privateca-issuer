@@ -12,7 +12,7 @@ on:
 
 jobs:
   start-runner:
-    if: ${{ (contains(github.event.pull_request.labels.*.name, 'safe to test') && !contains(github.event.pull_request.labels.*.name, 'lgtm')) || (github.event_name=="workflow_dispatch") }}
+    if: ${{ (contains(github.event.pull_request.labels.*.name, 'safe to test') && !contains(github.event.pull_request.labels.*.name, 'lgtm')) || (contains(github.event_name, "workflow_dispatch")) }}
     runs-on: ubuntu-latest
     outputs:
       label: ${{ steps.start-ec2-runner.outputs.label }}
