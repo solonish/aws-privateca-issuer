@@ -12,5 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "GitHub event: ${{ github.event}}"
-        echo "GitHub full: ${{ github}}"
+        echo "GitHub event: ${{ github.event.type }}"
